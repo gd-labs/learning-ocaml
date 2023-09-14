@@ -6,7 +6,7 @@ Project following the book [OCaml Programming: Correct + Efficient + Beautiful](
 
 1. Change the function into a helper function. Add an extra argument: the accumulator.
 
-2. Write a new version of the function that calls the helper that passes the original base case's return value as initial accumulator value.
+2. Call the helper in the original function passing the original base case's return value as the accumulator value.
 
 3. Change the helper function to return the accumulator in the base case.
 
