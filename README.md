@@ -14,4 +14,4 @@ Project following the book [OCaml Programming: Correct + Efficient + Beautiful](
 
 # Defensive programming
 
-> Sometimes programmeres worry unnecessarily that defensive programming will be too expensive, eithe in terms of the time it costs them to implements the checks initially, or in the run-time costs that will be paid in checking assertions. These concerns are far too often misplaced. The time and money it costs society to rapair faults in software suggests that we could all afford to have programs that run a little more slowly.
+> Sometimes programmers worry unnecessarily that defensive programming will be too expensive, either in terms of the time it costs them to implements the checks initially, or in the run-time costs that will be paid in checking assertions. These concerns are far too often misplaced. The time and money it costs society to repair faults in software suggests that we could all afford to have programs that run a little more slowly.
