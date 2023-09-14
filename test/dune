@@ -1,2 +1,3 @@
 (test
- (name learning_ocaml))
+ (name learning_ocaml)
+ (libraries ounit2))
