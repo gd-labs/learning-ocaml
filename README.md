@@ -2,7 +2,7 @@
 
 Project following the book [OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/ocaml_programming.pdf) serving as an introduction both to the OCaml programming language and the idea behind functional programming in general.
 
-# The recipe for Tail Recursion (4.4)
+## The recipe for Tail Recursion (4.4)
 
 1. Change the function into a helper function. Add an extra argument: the accumulator.
 
@@ -12,11 +12,11 @@ Project following the book [OCaml Programming: Correct + Efficient + Beautiful](
 
 4. Change the hekper function's recursive case.
 
-# Defensive programming (4.7)
+## Defensive programming (4.7)
 
 > Sometimes programmers worry unnecessarily that defensive programming will be too expensive, either in terms of the time it costs them to implements the checks initially, or in the run-time costs that will be paid in checking assertions. These concerns are far too often misplaced. The time and money it costs society to repair faults in software suggests that we could all afford to have programs that run a little more slowly.
 
-# Test-driven development (5.3)
+## Test-driven development (5.3)
 
 - Write a failing unit test case.
 
@@ -26,6 +26,6 @@ Project following the book [OCaml Programming: Correct + Efficient + Beautiful](
 
 - Repeat until the test suite provides evidence that implementation is correct.
 
-# Algebraic data types (5.9)
+## Algebraic data types (5.9)
 
 Another name for variant types. The "algebraic" refers to the fact that these types contain both sum and product types, where sum types impose that their values are composed by **one** of many underlying sets and product types imply that their values are composed by elements from **each of many** underlying sets.
