@@ -1,4 +1,4 @@
 (executable
- (public_name learning_ocaml)
+ (public_name src)
  (name main)
- (libraries learning_ocaml))
+ (libraries book))
