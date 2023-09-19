@@ -29,3 +29,9 @@ Project following the book [OCaml Programming: Correct + Efficient + Beautiful](
 ## Algebraic data types (5.9)
 
 Another name for variant types. The "algebraic" refers to the fact that these types contain both sum and product types, where sum types impose that their values are composed by **one** of many underlying sets and product types imply that their values are composed by elements from **each of many** underlying sets.
+
+## The meaning of "higher-order" (6.1.2)
+
+In logic, *first order quantification* refers primarily to the universal and existential quantifiers. These make it possible to quantify over some *domain* of interest, such as the natural numbers.
+
+In programming languages *first-order functions* similarly refer to functions that operate on individual data elements. Whereas *higher-order functions* can operate on functions, much like higher-order logics can quantify over properties of some domain (which are like functions).
