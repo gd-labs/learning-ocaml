@@ -50,9 +50,32 @@ let rec postorder tree =
   | Node {value; left; right} -> postorder left @ postorder right @ [value]
 ;;
 
-let rec print_lst list =
-  match list with
-  | [] -> print_newline ()
-  | x :: xs -> print_int x; print_string " "; print_lst xs
+type 'a tree =
+  | Leaf
+  | Node of 'a * 'a tree * 'a tree
 ;;
-  
+
+let rec map_tree f = function
+  | Leaf -> Leaf
+  | Node (v, l, r) ->
+      Node (f v, map_tree f l, map_tree f r)
+;;
+
+let rec fold_tree f acc = function
+  | Leaf -> acc
+  | Node (v, l, r) ->
+      f v (fold_tree f acc l) (fold_tree f acc r)
+;;
+
+let fold_size t = fold_tree (fun _ l r -> 1 + l + r) 0 t
+
+let fold_depth t = fold_tree (fun _ l r -> 1 + max l r) 0 t
+
+let fold_preorder t = fold_tree (fun v l r -> [v] @ l @ r) [] t
+
+let rec filter_tree p = function
+  | Leaf -> Leaf
+  | Node (v, l, r) -> 
+      if (p v) then Node (v, filter_tree p l, filter_tree p r)
+      else Leaf
+;;
