@@ -35,3 +35,13 @@ Another name for variant types. The "algebraic" refers to the fact that these ty
 In logic, *first order quantification* refers primarily to the universal and existential quantifiers. These make it possible to quantify over some *domain* of interest, such as the natural numbers.
 
 In programming languages *first-order functions* similarly refer to functions that operate on individual data elements. Whereas *higher-order functions* can operate on functions, much like higher-order logics can quantify over properties of some domain (which are like functions).
+
+## Fold on variant types (6.5.2)
+
+- Write a recursive `fold` function that takes in one argument for each constructor of `t`.
+
+- The function matches against the constructors, calling itself on any value of type `t`.
+
+- Use the appropriate argument of `fold` to combine the results of all recursive calls.
+
+This technique constructs something called a *catamorphism*, or a *generalized fold operation*.
