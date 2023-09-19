@@ -1,6 +1,6 @@
 # learning-ocaml
 
-Project following the book [OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/ocaml_programming.pdf) serving as an introduction both to the OCaml programming language and the idea behind functional programming in general.
+Project following the book [OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/ocaml_programming.pdf) serving as an introduction both to the OCaml programming language and the ideas behind functional programming in general.
 
 ## The recipe for Tail Recursion (4.4)
 
@@ -38,6 +38,8 @@ In programming languages *first-order functions* similarly refer to functions th
 
 ## Fold on variant types (6.5.2)
 
+Applying the fold functional for any variant type in OCaml can be done as follows: 
+
 - Write a recursive `fold` function that takes in one argument for each constructor of `t`.
 
 - The function matches against the constructors, calling itself on any value of type `t`.
@@ -45,3 +47,11 @@ In programming languages *first-order functions* similarly refer to functions th
 - Use the appropriate argument of `fold` to combine the results of all recursive calls.
 
 This technique constructs something called a *catamorphism*, or a *generalized fold operation*.
+
+## Pattern matching performance
+
+The idea of pattern matching not being performant is addressed in the book [Real World OCaml](https://dev.realworldocaml.org/lists-and-patterns.html), which states that:
+
+> Naively, you might think that it would be necessary to check each case in a **match** sequence to figure out which one fires; If the cases of a match were guarded by arbitrary code, that would be the case. But OCaml is often able to generate machine code that jumps directly to the matched case based on an efficiently chosen set of runtime checks.
+
+The main difference between a match-based implementation and an if-based one is that the latter usually leads to a repetition of efforts, whereas the former is applied exactly once in the context of a single element. 
