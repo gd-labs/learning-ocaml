@@ -2,6 +2,7 @@
 let rec map f = function
   | [] -> []
   | h :: t -> f h :: map f t
+;;
 
 let rec map f = function
   | [] -> []
