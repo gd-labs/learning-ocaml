@@ -54,4 +54,10 @@ The idea of pattern matching not being performant is addressed in the book [Real
 
 > Naively, you might think that it would be necessary to check each case in a **match** sequence to figure out which one fires; If the cases of a match were guarded by arbitrary code, that would be the case. But OCaml is often able to generate machine code that jumps directly to the matched case based on an efficiently chosen set of runtime checks.
 
-The main difference between a match-based implementation and an if-based one is that the latter usually leads to a repetition of efforts, whereas the former is applied exactly once in the context of a single element. 
+The main difference between a match-based implementation and an if-based one is that the latter usually leads to a repetition of efforts, whereas the former is applied exactly once in the context of a single element.
+
+## Modular programming
+
+> One key solution to managing complexity of large software is *modular programming*: the code is composed of many different code modules that are developed separately. This allows different developers to take on discrete pieces of the system and design and implement them without having to understand all the rest. But to build large programs out of modules effectively, we need to be aable to write modules that we can convince ourselves are correct *in isolation* from the rest of the program.
+>
+> Rather than have to think about wwvery other part of the program when developing a code module, weneed to be able to use *local reasoning*: that is, reasoning about just the module and the contract it needs to satisfy with respect to the rest of the program. If everyone has done their job, separately developed code modules can be plugged to form a working program without every developer needing to understand everything done by every other developer in the team. This is the key idea of **modular programming**.
