@@ -1,30 +1,51 @@
-module type ListStack = sig
-  type 'a stack
+module type Stack = sig
+  type 'a t
   (** [Empty] is raised when an operation cannot
       be applied to an empty stack. *)
   exception Empty
   (** [empty] is the empty stack. *)
-  val empty: 'a stack
+  val empty: 'a t
 
-  val is_empty: 'a stack -> bool
+  val is_empty: 'a t -> bool
 
   (** [push x s] pushes [x] onto the top of [s]. *)
-  val push: 'a -> 'a stack -> 'a stack
+  val push: 'a -> 'a t -> 'a t
 
   (** [peek s] is the top element of [s].
       Raises  [Empty] if [s] is empty. *)
-  val peek: 'a stack -> 'a
+  val peek: 'a t -> 'a
   
   (** [pop s] is all but the top element of [s].
   Raises [Empty] if [s] is empty. *)
-  val pop: 'a stack -> 'a stack
+  val pop: 'a t -> 'a t
 
   (** [size s] is the number of elements on the stack. *)
-  val size: 'a stack -> int
+  val size: 'a t -> int
 end
 
-module ListStackCachedSize : ListStack = struct
-  type 'a stack = 'a list * int
+module ListStack: Stack = struct
+  type 'a t = 'a list
+  let empty = []
+  
+  let is_empty = function [] -> true | _ -> false
+
+  let push x s = x :: s
+
+  exception Empty
+
+  let peek = function
+    | [] -> raise Empty
+    | x :: _ -> x
+
+  let pop = function
+    | [] -> raise Empty
+    | _ :: s -> s
+
+  let size s = List.length s
+end
+
+module ListStackCachedSize: Stack = struct
+  type 'a t = 'a list * int
 
   exception Empty
 
@@ -47,23 +68,31 @@ module ListStackCachedSize : ListStack = struct
   let size = snd
 end
 
-module ListStack : ListStack = struct
-  type 'a stack = 'a list
-  let empty = []
+module CustomStack: Stack = struct
+  type 'a entry = {top: 'a; rest: 'a t; size: int}
   
-  let is_empty = function [] -> true | _ -> false
-
-  let push x s = x :: s
+  and 'a t = S of 'a entry option
 
   exception Empty
 
+  let empty = S None
+
+  let is_empty = function
+    | S None -> true
+    | _ -> false
+
+  let size = function
+    | S None -> 0
+    | S (Some {size}) -> size
+
+  let push x s =
+    S (Some {top = x; rest = s; size = size s +1})
+
   let peek = function
-    | [] -> raise Empty
-    | x :: _ -> x
+    | S None -> raise Empty
+    | S (Some {top}) -> top
 
   let pop = function
-    | [] -> raise Empty
-    | _ :: s -> s
-
-  let size s = List.length s
+    | S None -> raise Empty
+    | S (Some {rest}) -> rest
 end
