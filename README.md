@@ -64,6 +64,6 @@ The main difference between a match-based implementation and an if-based one is 
 
 ## Subtyping
 
-A more complete notion of subtyping is defined by (Barbara Liskov)[https://dl.acm.org/doi/pdf/10.1145/197320.197383]. But briefly:
+A more complete notion of subtyping is defined by [Barbara Liskov](https://dl.acm.org/doi/pdf/10.1145/197320.197383). But briefly:
 
 > If *S* is a subtype of *T*, then substituting an object of type *S* for an object of type *T* should not change any desirable behaviors of a program.
