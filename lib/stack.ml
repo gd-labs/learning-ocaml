@@ -21,10 +21,12 @@ module type Stack = sig
 
   (** [size s] is the number of elements on the stack. *)
   val size: 'a t -> int
+
 end
 
 module ListStack: Stack = struct
   type 'a t = 'a list
+  
   let empty = []
   
   let is_empty = function [] -> true | _ -> false
@@ -41,7 +43,7 @@ module ListStack: Stack = struct
     | [] -> raise Empty
     | _ :: s -> s
 
-  let size s = List.length s
+  let size s = List.length s    
 end
 
 module ListStackCachedSize: Stack = struct
