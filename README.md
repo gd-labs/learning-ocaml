@@ -62,8 +62,14 @@ The main difference between a match-based implementation and an if-based one is 
 >
 > Rather than have to think about every other part of the program when developing a code module, we need to be able to use *local reasoning*: that is, reasoning about just the module and the contract it needs to satisfy with respect to the rest of the program. If everyone has done their job, separately developed code modules can be plugged to form a working program without every developer needing to understand everything done by every other developer in the team. This is the key idea of **modular programming**.
 
-## Subtyping
+## Subtyping (7.2.4)
 
 A more complete notion of subtyping is defined by [Barbara Liskov](https://dl.acm.org/doi/pdf/10.1145/197320.197383). But briefly:
 
 > If *S* is a subtype of *T*, then substituting an object of type *S* for an object of type *T* should not change any desirable behaviors of a program.
+
+## Functional data structures (7.6)
+
+A **functional data structure** is one that doesn't make use of mutability, which implies the property of being **persistent**, meaning that updating the data structure with some kind of operation does not change its existing version, instead it produces a new one so that both versions still exist and can be accessed at any time. Aiming for such a pattern may lead to some memory overheads, so a good language implementation generally ensures that any parts of the data structure that are not changed by an operation will be **shared** between the old and the new versions. Any parts that do change will be **copied** so that the previous model persists.
+
+> The opposite of a persistent data structure is an *ephemeral* data structure: changes are destructive, so that only one version exists at any time. Both persistent and ephemeral data structures can be built in both functional and imperative languages.
