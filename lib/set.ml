@@ -18,7 +18,7 @@ module type Set = sig
   val elements : 'a t -> 'a list
 end
 
-module UniqListSet = struct
+module UniqListSet : Set = struct
   type 'a t = 'a list
 
   let empty = []
@@ -41,3 +41,11 @@ module ListSet = struct
 
   let elements s = List.sort_uniq Stdlib.compare s
 end
+
+module SetOfList (S : Set) = struct
+  include S
+  let of_list lst = List.fold_right S.add lst S.empty
+end
+
+module OfList = SetOfList (ListSet)
+module UniqOfList = SetOfList (UniqListSet)
