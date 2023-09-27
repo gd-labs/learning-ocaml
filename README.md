@@ -73,3 +73,9 @@ A more complete notion of subtyping is defined by [Barbara Liskov](https://dl.ac
 A **functional data structure** is one that doesn't make use of mutability, which implies the property of being **persistent**, meaning that updating the data structure with some kind of operation does not change its existing version, instead it produces a new one so that both versions still exist and can be accessed at any time. Aiming for such a pattern may lead to some memory overheads, so a good language implementation generally ensures that any parts of the data structure that are not changed by an operation will be **shared** between the old and the new versions. Any parts that do change will be **copied** so that the previous model persists.
 
 > The opposite of a persistent data structure is an *ephemeral* data structure: changes are destructive, so that only one version exists at any time. Both persistent and ephemeral data structures can be built in both functional and imperative languages.
+
+## Dependent types (7.9.2)
+
+> Functor types are an example of an advanced programming language feature called *dependent types*, with which the type of an output is determined by the value of an input. That's different than the normal case of a function, where it's the output value that's determined by the input value, and the output type is independent of the input value.
+>
+> Dependent types enable type systems to express much more about the correctness of a program, but type checking and inference for dependent types is much more challenging. Practical dependent types systems are an active area of research. 
