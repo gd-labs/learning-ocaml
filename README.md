@@ -76,6 +76,6 @@ A **functional data structure** is one that doesn't make use of mutability, whic
 
 ## Dependent types (7.9.2)
 
-> Functor types are an example of an advanced programming language feature called *dependent types*, with which the type of an output is determined by the value of an input. That's different than the normal case of a function, where it's the output value that's determined by the input value, and the output type is independent of the input value.
+> Functor types are an example of an advanced programming language feature called *dependent types*, with which the **type** of an output is determined by the **value** of an input. That's different than the normal case of a function, where it's the output **value** that's determined by the input **value**, and the output type is independent of the input value.
 >
-> Dependent types enable type systems to express much more about the correctness of a program, but type checking and inference for dependent types is much more challenging. Practical dependent types systems are an active area of research. 
+> Dependent types enable type systems to express much more about the correctness of a program, but type checking and inference for dependent types is much more challenging. Practical dependent types systems are an active area of research.
