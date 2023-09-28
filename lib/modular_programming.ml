@@ -125,3 +125,17 @@ module Fraction : Fraction = struct
   let mul (a, b) (a', b') =
     a * a', b * b'
 end
+
+(** Exercise: date order. *)
+type date = 
+{ month: int
+; day: int }
+
+module Date = struct
+  type t = date
+
+  let compare d1 d2 =
+    let m = d1.month - d2.month in
+    if m != 0 then m
+    else d1.day - d2.day
+end
