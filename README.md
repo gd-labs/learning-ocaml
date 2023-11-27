@@ -79,3 +79,9 @@ A **functional data structure** is one that doesn't make use of mutability, whic
 > Functor types are an example of an advanced programming language feature called *dependent types*, with which the **type** of an output is determined by the **value** of an input. That's different than the normal case of a function, where it's the output **value** that's determined by the input **value**, and the output type is independent of the input value.
 >
 > Dependent types enable type systems to express much more about the correctness of a program, but type checking and inference for dependent types is much more challenging. Practical dependent types systems are an active area of research.
+
+## Documentation and Testing (8.0)
+
+**Documentation** is a ground truth of what a programmer intended, as opposed to what whey actually wrote. It communicates to other humans the ideas the author had in their head. Maybe the failure occurs in the code, or maybe in the documentation. But writing documentation forces one to think a second time about one's intentions. The cognitive task of explaining ideas to other humans is certaily different than explaining ideas to the computer. That can expose failures in thinking.
+
+**Testing** is the ground truth of what a program actually does, as opposed to that the programmer intended. It provides evidence that the programmer got it right. One can write a piece of code that one thinks is right, but a test can be written in order to *demonstrate* it's right. 
