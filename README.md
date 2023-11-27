@@ -84,4 +84,14 @@ A **functional data structure** is one that doesn't make use of mutability, whic
 
 > **Documentation** is a ground truth of what a programmer intended, as opposed to what whey actually wrote. It communicates to other humans the ideas the author had in their head. Maybe the failure occurs in the code, or maybe in the documentation. But writing documentation forces one to think a second time about one's intentions. The cognitive task of explaining ideas to other humans is certaily different than explaining ideas to the computer. That can expose failures in thinking.
 >
-> **Testing** is the ground truth of what a program actually does, as opposed to that the programmer intended. It provides evidence that the programmer got it right. One can write a piece of code that one thinks is right, but a test can be written in order to *demonstrate* it's right. 
+> **Testing** is the ground truth of what a program actually does, as opposed to that the programmer intended. It provides evidence that the programmer got it right. One can write a piece of code that one thinks is right, but a test can be written in order to *demonstrate* it's right.
+
+## Abstraction by Specification (8.1)
+
+> Abstraction enables modular programming by hiding the details of implementations. Specifications are part of that kind of abstraction: they reveal certain information about the behavior of a module without disclosing all the details of the module's implementation.
+>
+> *Locality* is one of the benefits of abstraction by specification. A module can be understood without needing to examine its implementation. This locality is critical in implementing large programs, and even in implementing smaller programs in teams. No one person can keep the entire system in their head at a time.
+>
+> *Modifiability* is another benefit. Modules can be reimplemented without changing the implementation of other modules or functions. Software libraries depend upon this to improve their functionality without forcing all their clients to rewrite code every time a library is upgraded. Modifiability also enables performance enhancements: simple, slow implementations can be written at first, then bottlenecks are applied as necessary.
+>
+> A client should not assume more about the implementation than is given in the specification because that allows the implementation to change. The specification forms an *abstraction barrier* that protects the implementer from the client and vice versa. Making assumptions about the implementation that are not guaranteed by the specification is known as *violating the abstraction barrier*. The abstraction barrier enforces local reasoning. Further, it promotes *loose coupling* between different code modules. If one module changes, other modules are less likely to have to change to match.
