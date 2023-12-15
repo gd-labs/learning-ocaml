@@ -95,3 +95,13 @@ A **functional data structure** is one that doesn't make use of mutability, whic
 > *Modifiability* is another benefit. Modules can be reimplemented without changing the implementation of other modules or functions. Software libraries depend upon this to improve their functionality without forcing all their clients to rewrite code every time a library is upgraded. Modifiability also enables performance enhancements: simple, slow implementations can be written at first, then bottlenecks are applied as necessary.
 >
 > A client should not assume more about the implementation than is given in the specification because that allows the implementation to change. The specification forms an *abstraction barrier* that protects the implementer from the client and vice versa. Making assumptions about the implementation that are not guaranteed by the specification is known as *violating the abstraction barrier*. The abstraction barrier enforces local reasoning. Further, it promotes *loose coupling* between different code modules. If one module changes, other modules are less likely to have to change to match.
+
+## Debugging (8.4.2)
+
+> Inevitably though, you will discover faults in your programs. When you do, approach them as a scientist by employing the *scientific method*:
+> - evaluate the data that are available;
+> - formulate a hypothesis that might explain the data;
+> - design a repeatable experiment to test the hypothesis; and
+> - use the result of that experiment to refine or refute your hypothesis
+>
+> Often the crux of this process is finding the simplest, smallest input that triggers a fault. That's not usually the original input for which we discover a fault. So some initial experimentation might be needed to find a *minimal test case*. 
