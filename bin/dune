@@ -1,4 +1,3 @@
-(executable
- (public_name src)
- (name main)
- (libraries book))
+(executables
+ (public_names main mutability highorder modules types)
+ (names main mutability highorder modules types))
