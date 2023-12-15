@@ -1,3 +1,2 @@
 (library
- (name book)
- (public_name learning_ocaml.book))
+ (name book))
