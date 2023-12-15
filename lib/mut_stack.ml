@@ -5,7 +5,7 @@ module type MutableStack = sig
       changed, but in the sense that it is not persistent: the operations
       [push] and [pop] destructively modify the stack. *)
   type 'a t
-
+  
   (** Raised if [peek] or [pop] encounter the empty stack. *)
   exception Empty
 
