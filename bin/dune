@@ -1,4 +1,8 @@
 (executables
- (public_names main mutability highorder modules types)
- (names main mutability highorder modules types)
- (libraries core fmt))
+ (public_names
+  main mutability highorder modules types ds)
+ (names
+  main mutability highorder modules types ds)
+ (libraries core fmt lwt.unix)
+ (preprocess
+  (pps lwt_ppx)))
