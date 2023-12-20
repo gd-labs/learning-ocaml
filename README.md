@@ -109,3 +109,9 @@ A **functional data structure** is one that doesn't make use of mutability, whic
 ## Promises (10.6.3)
 
 > In the functional programming paradigm, one of the best known abstractions for concurrency is *promises*. Other names for this idea include *futures*, *deferreds* and *delayeds*. All those names refer to the idea of a computation that is not yet finished: it has promised to eventually produce a value in the future, but the completion of the computation has been deferred or delayed. There may be many such values being computed concurrently, and when the value is finally available, there may be computations ready to execute that depend on the value.
+
+## Asynchronous I/O (10.6.6)
+
+> The I/O functions that are part of the OCaml standard library are *synchronous* or *blocking*: when you call such a function, it does not return until the I/O has been completed. "Synchronous" here refers to the synchronization between your code and the I/O function: your code does not get to execute again until the I/O code is done. "Blocking" refers to the fact that your code has to wait until the I/O completes, as if it's blocked.
+>
+> *Asynchronous* or *non-blocking* I/O is the opposite style of I/O. Asynchronous I/O operations return immediately, regardless of whether the input or output has been completed. That enables a program to launch an I/O operation, carry on doing other computations, and later come back to make use of the completed operation.
